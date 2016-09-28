@@ -34,3 +34,8 @@ supervisor-program-{{ program }}:
 {% endfor -%}
 {% endif -%}
 
+{{ supervisor.supervisord_conf.supervisord.childlogdir }}:
+  file.directory:
+    - user:  root
+    - group: root
+    - makedirs: True
